@@ -1,0 +1,122 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# SafeKids Project Specific Files
+
+# Firebase configuration files (should be downloaded per developer)
+google-services.json
+GoogleService-Info.plist
+serviceAccountKey.json
+
+# Agora (Audio Calling) certificates and keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+
+# Environment files (contain sensitive data)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Local configuration files
+lib/config/environment.local.dart
+lib/config/environment.dev.dart
+lib/config/environment.prod.dart
+
+# App specific debug and log files
+flutter_run_log.txt
+debug.log
+redesign_preview.md
+
+# Hive local database files
+*.hive
+*.hive.lock
+
+# Integration test outputs
+test_integration/
+integration_test/
+
+# Localization generated files
+*.g.dart
+*.arb
+l10n.yaml
+
+# FlutterFire generated files
+.firebase/
+
+# App specific temporary files
+temp/
+tmp/
+
+# Flutter Web
+/web/
+
+# Flutter Windows
+/windows/flutter/generated_plugin_registrant.cc
+/windows/flutter/generated_plugin_registrant.h
+/windows/flutter/generated_plugins.cmake
+
+# Flutter macOS
+/macos/Flutter/Flutter.framework
+/macos/Flutter/Flutter.podspec
+/macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Flutter Linux
+/linux/flutter/generated_plugin_registrant.cc
+/linux/flutter/generated_plugin_registrant.h
+/linux/flutter/generated_plugins.cmake
+
+# Background service files
+background_service.log
+
+# Screenshots for testing
+screenshots/
+test/screenshots/

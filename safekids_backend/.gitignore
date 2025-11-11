@@ -1,0 +1,154 @@
+# Dependencies
+node_modules/
+# Keep package-lock.json for deployment consistency
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Build
+dist/
+build/
+
+# Firebase
+firebase-adminsdk-*.json
+serviceAccountKey.json
+
+# Misc
+*.bak
+*.tmp
+.cache/
+
+# SafeKids Project Specific Files
+
+# All Firebase service account keys (should be downloaded per developer)
+firebase-adminsdk-*.json
+serviceAccountKey.json
+
+# All environment files (contain sensitive data)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Additional SafeKids specific files
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local development files
+local_config.js
+dev_config.js
+
+# Temporary data files
+temp_data/
+temp_uploads/
+uploads/
+
+# Database files (for local development)
+*.sqlite
+*.sqlite3
+*.db
+
+# SSH and server keys
+ssh_keys/
+*.pem
+id_rsa*
+known_hosts
+
+# Process management files
+pm2.log
+ecosystem.config.js
+
+# Docker (if using Docker for development)
+.dockerignore
+
+# Azure deployment files (if generated locally)
+azure-webapps-*.json
+.vs/azure-webjobs/
+
+# Logs specific to SafeKids features
+location_tracking.log
+geofence_detection.log
+sms_service.log
+notification_service.log
+chat_service.log
+
+# Test data and fixtures
+test_data/
+fixtures/
+seed_data/local_data/
+
+# Postman collections (may contain sensitive data)
+postman_collections/
+*.postman_collection
+
+# Database backups and dumps
+database_backups/
+*.dump
+*.sql
+
+# SSL certificates (should not be in version control)
+ssl/
+certs/
+*.crt
+*.csr
+
+# Performance profiling
+profile/
+heapdump/
+*.heapsnapshot
+
+# Redis dump file (if using Redis)
+dump.rdb
+
+# MongoDB local database files
+data/db/
+mongod.log
+
+# SafeKids specific configuration backups
+config_backup/
+settings_backup/
+
+# API Keys and secrets (additional patterns)
+api_keys.txt
+secrets.txt
+private_keys/
+credentials/
+
+# development and debug files
+debug/
+debug.log
+error.log
+
+# Story-specific test outputs
+test_outputs/
+test_results/
+story_test_results/

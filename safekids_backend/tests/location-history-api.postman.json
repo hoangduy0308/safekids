@@ -1,0 +1,216 @@
+{
+  "info": {
+    "name": "Story 2.3 - Location History & Timeline",
+    "description": "Test Location History API (Task 1 & 2)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register Parent",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Test Parent\",\n  \"phone\": \"0912345678\",\n  \"email\": \"parent@test.com\",\n  \"password\": \"password123\",\n  \"role\": \"parent\"\n}"
+        },
+        "url": {"raw": "http://localhost:3000/api/auth/register", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "auth", "register"]}
+      }
+    },
+    {
+      "name": "Auth - Register Child",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Test Child\",\n  \"phone\": \"0987654321\",\n  \"email\": \"child@test.com\",\n  \"password\": \"password123\",\n  \"role\": \"child\",\n  \"age\": 10\n}"
+        },
+        "url": {"raw": "http://localhost:3000/api/auth/register", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "auth", "register"]}
+      }
+    },
+    {
+      "name": "Auth - Login Parent",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"parent@test.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {"raw": "http://localhost:3000/api/auth/login", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "auth", "login"]}
+      }
+    },
+    {
+      "name": "Auth - Login Child",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"child@test.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {"raw": "http://localhost:3000/api/auth/login", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "auth", "login"]}
+      }
+    },
+    {
+      "name": "Link - Send Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "Bearer {{parentToken}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"receiverEmail\": \"child@test.com\"\n}"
+        },
+        "url": {"raw": "http://localhost:3000/api/link/request", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "link", "request"]}
+      }
+    },
+    {
+      "name": "Link - Accept Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "Bearer {{childToken}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": {"raw": "http://localhost:3000/api/link/accept/{{requestId}}", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "link", "accept", "{{requestId}}"]}
+      }
+    },
+    {
+      "name": "Location - Create Sample Locations",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "Bearer {{childToken}}"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"latitude\": 21.0285,\n  \"longitude\": 105.8542,\n  \"accuracy\": 5,\n  \"timestamp\": \"2025-10-14T08:00:00Z\"\n}"
+        },
+        "url": {"raw": "http://localhost:3000/api/location", "protocol": "http", "host": ["localhost"], "port": ["3000"], "path": ["api", "location"]}
+      }
+    },
+    {
+      "name": "Location History - Get Last 24h (Default)",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{parentToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/history",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "history"]
+        }
+      }
+    },
+    {
+      "name": "Location History - Get Last 7 Days",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{parentToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/history?startDate=2025-10-07T00:00:00Z&endDate=2025-10-14T23:59:59Z",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "history"],
+          "query": [
+            {"key": "startDate", "value": "2025-10-07T00:00:00Z"},
+            {"key": "endDate", "value": "2025-10-14T23:59:59Z"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Location History - With Limit",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{parentToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/history?limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "history"],
+          "query": [{"key": "limit", "value": "10"}]
+        }
+      }
+    },
+    {
+      "name": "Location History - Unauthorized (Unlinked Parent)",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{unauthorizedToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/history",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "history"]
+        }
+      }
+    },
+    {
+      "name": "Location Stats - Get Last 24h",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{parentToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/stats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "stats"]
+        }
+      }
+    },
+    {
+      "name": "Location Stats - Get Last 7 Days",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{parentToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/stats?startDate=2025-10-07T00:00:00Z&endDate=2025-10-14T23:59:59Z",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "stats"],
+          "query": [
+            {"key": "startDate", "value": "2025-10-07T00:00:00Z"},
+            {"key": "endDate", "value": "2025-10-14T23:59:59Z"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Location Stats - Unauthorized",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{unauthorizedToken}}"}],
+        "url": {
+          "raw": "http://localhost:3000/api/location/child/{{childId}}/stats",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": ["3000"],
+          "path": ["api", "location", "child", "{{childId}}", "stats"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {"key": "parentToken", "value": ""},
+    {"key": "childToken", "value": ""},
+    {"key": "unauthorizedToken", "value": ""},
+    {"key": "childId", "value": ""},
+    {"key": "requestId", "value": ""}
+  ]
+}
