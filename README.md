@@ -3,6 +3,7 @@
 ![SafeKids Logo](https://img.shields.io/badge/SafeKids-Family%20Safety-blue?style=for-the-badge&logo=shield-check)
 ![Platform](https://img.shields.io/badge/Platform-Flutter%20%7C%20Node.js-informational?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Git Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)
 
 A comprehensive family safety application designed to help parents keep track of their children's location, screen time, and ensure their well-being through real-time monitoring and communication features.
 
@@ -122,7 +123,7 @@ SafeKids/
 
 #### 1. Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/hoangduy0308/safekids.git
 cd SafeKids
 ```
 
@@ -369,6 +370,8 @@ mongod --dbpath /path/to/your/db
 
 ## 🤝 Contributing
 
+**Repository**: https://github.com/hoangduy0308/safekids
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
@@ -395,13 +398,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🐛 Bug Reports & Feature Requests
 
-For bug reports and feature requests, please use the [GitHub Issues](https://github.com/your-repo/safekids/issues) page.
+For bug reports and feature requests, please use the [GitHub Issues](https://github.com/hoangduy0308/safekids/issues) page.
 
 ## 📞 Support
 
 For technical support or questions:
-- Email: support@safekids.com
-- Documentation: [Wiki](https://github.com/your-repo/safekids/wiki)
+- Email: hoangduyntt04@gmail.com
+- Repository: https://github.com/hoangduy0308/safekids
+- Documentation: [Wiki](https://github.com/hoangduy0308/safekids/wiki)
 - API Documentation: Available at `/api-docs` endpoint
 
 ## 🙏 Acknowledgments
