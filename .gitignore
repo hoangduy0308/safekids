@@ -1,0 +1,201 @@
+# SafeKids Project - Root .gitignore
+# This file contains ignore patterns for the entire project
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project-wide ignores
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Documentation build outputs
+docs/_build/
+docs/build/
+
+# Root level configuration files (should be created per environment)
+config/local.js
+config/development.js
+config/production.js
+
+# SSL Certificates and Keys (never commit!)
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+ssl/
+certs/
+
+# All Firebase configuration files (should be downloaded per developer)
+google-services.json
+GoogleService-Info.plist
+serviceAccountKey.json
+firebase-adminsdk-*.json
+
+# API Keys and Secrets
+api_keys.txt
+secrets.txt
+private_keys/
+credentials/
+ssh_keys/
+
+# Database files (local development)
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.sql
+
+# Backup files
+backups/
+database_backups/
+config_backup/
+settings_backup/
+
+# Deployment specific files that shouldn't be committed
+.azure/
+.vs/
+deployment/local_settings/
+deployment/docker-compose.override.yml
+
+# Performance and profiling
+profile/
+heapdump/
+*.heapsnapshot
+
+# Test outputs and reports
+test_outputs/
+test_results/
+coverage/
+*.lcov
+
+# Node modules and build artifacts that might appear at root
+node_modules/
+dist/
+build/
+out/
+
+# Package manager lock files at root level (if any)
+package-lock.json
+yarn.lock
+
+# Story-specific temporary files
+story_*/
+temp_stories/
+feature_*/
+
+# Postman collections (may contain sensitive data)
+postman_collections/
+*.postman_collection
+
+# Redis dump files
+dump.rdb
+
+# MongoDB local data
+data/
+
+# Process management files
+pm2.log
+ecosystem.config.js
+
+# Local development scripts
+dev_setup.sh
+local_run.sh
+
+# Documentation drafts
+docs/draft/
+docs/wip/
+
+# Architecture diagrams and design files (if they contain sensitive info)
+architecture/
+design_docs/
+
+# Sensitive configuration files
+config.json
+settings.json
+local.json
+
+# Monitoring and analytics
+monitoring/
+analytics/
+
+# SafeKids specific - Project management files
+project_management/
+sprint_backups/
+retrospective_notes/
+
+# CI/CD local configuration
+.github/workflows/local_*
+.gitlab-ci.local.yml
+
+# Docker local files
+docker-compose.local.yml
+docker.override.yml
+
+# Local environment scripts
+scripts/local_*
+scripts/dev_*
+
+# Local SSL certificates for development
+ssl-dev/
+certs-dev/
+
+# Local database initialization scripts (may contain sensitive data)
+init_db_local.sql
+local_seed_data.js
+
+# Development tools configuration
+.nvmrc.local
+.eslintcache.local
+
+# Temporary API documentation
+api_docs_local/
+swagger_local.yaml
+
+# SafeKids specific - Location and geofence test data
+test_locations/
+geofence_test_data/
+location_history_test.json
+
+# SafeKids specific - Chat and communication test data
+chat_test_data/
+message_logs_test.json
+
+# SafeKids specific - Screen time test data
+screentime_test_data/
+usage_reports_test.json
+
+# SafeKids specific - Test user data
+test_users/
+mock_profiles/
+sample_family_data.json

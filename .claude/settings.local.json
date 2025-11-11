@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__gkg__list_projects",
+      "mcp__gkg__index_project",
+      "mcp__gkg__repo_map",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
